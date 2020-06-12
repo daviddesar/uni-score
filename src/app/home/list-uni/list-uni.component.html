@@ -8,14 +8,19 @@
       </tr>
     </thead>
     <tbody>
-      <tr app-uni *ngFor="let uni of renderTable" [uni]="uni" class="uni-component"></tr>
-      <tr *ngIf="uniNotFoundStatus">
+      <!-- <tr app-uni *ngFor="let uni of renderTable" [uni]="uni" class="uni-component"></tr> -->
+      <tr *ngFor="let uni of renderTable" class="uni-component">
+        <td>{{uni.id}}</td>
+        <td>{{uni.name}}</td>
+        <td>{{uni.info}}</td>
+      </tr>
+      <!-- <tr *ngIf="uniNotFoundStatus">
         <td>
           Không tìm thấy mã trường!
         </td>
+        <td>{{}}</td>
         <td></td>
-        <td></td>
-      </tr>
+      </tr> -->
     </tbody>
   </table>
 </div>

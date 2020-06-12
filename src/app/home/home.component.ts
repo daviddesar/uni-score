@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { getPackedSettings } from 'http2';
 
 @Component({
   selector: 'app-home',
@@ -8,9 +10,24 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
 
   uniId: string;
-  constructor() { }
+  constructor(
+    private readonly route: ActivatedRoute
+  ) { }
 
   ngOnInit() {
+    this.route.params.subscribe(params =>{
+      // home/abc
+      // home/xyz
+      this.id = params.uniId  //abc
+      // service  getUniById(this.id);
+    });
+
+
+
+    // js promise
+    getAPI().then(data => {
+
+    })
   }
   onIdSearchHandler(uniId: string) {
     this.uniId = uniId;
