@@ -1,2 +1,4 @@
-<app-search-bar></app-search-bar>
-<app-list-uni></app-list-uni>
+<app-search-bar
+  (idSearchSend)="onIdSearchHandler($event)"
+></app-search-bar>
+<app-list-uni [uniId]="uniId"></app-list-uni>

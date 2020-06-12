@@ -1,5 +1,5 @@
 <div class="container mt-4">
-  <table class="table table-striped">
+  <table class="table table-hover">
     <thead>
       <tr>
         <th>ID Trường</th>
@@ -8,20 +8,13 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td>FTU</td>
-        <td>ĐH Ngoại Thương TPHCM</td>
-        <td>Lorem ipsum dolor sit amet.</td>
-      </tr>
-      <tr>
-        <td>FTU</td>
-        <td>ĐH Ngoại Thương TPHCM</td>
-        <td>Lorem ipsum dolor sit amet.</td>
-      </tr>
-      <tr>
-        <td>FTU</td>
-        <td>ĐH Ngoại Thương TPHCM</td>
-        <td>Lorem ipsum dolor sit amet.</td>
+      <tr app-uni *ngFor="let uni of renderTable" [uni]="uni" class="uni-component"></tr>
+      <tr *ngIf="uniNotFoundStatus">
+        <td>
+          Không tìm thấy mã trường!
+        </td>
+        <td></td>
+        <td></td>
       </tr>
     </tbody>
   </table>

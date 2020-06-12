@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
+  uniId: string;
   constructor() { }
 
   ngOnInit() {
   }
-
+  onIdSearchHandler(uniId: string) {
+    this.uniId = uniId;
+  }
 }

@@ -7,8 +7,10 @@
             type="email"
             class="form-control mb-2"
             placeholder="Nhập ID trường (VD: FTU, BKU,...)"
+            [(ngModel)]="idSearch"
+            name="first"
           />
-          <button type="submit" class="btn btn-primary">Tìm kiếm</button>
+          <button class="btn btn-primary" (click)="onSearchId()">Tìm kiếm</button>
         </div>
       </form>
     </div>
