@@ -1,35 +1,30 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { getPackedSettings } from 'http2';
+// import { getPackedSettings } from 'http2';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
-
-  uniId: string;
+  // uniId: string;
   constructor(
-    private readonly route: ActivatedRoute
+    // private readonly route: ActivatedRoute
   ) { }
 
   ngOnInit() {
-    this.route.params.subscribe(params =>{
-      // home/abc
-      // home/xyz
-      this.id = params.uniId  //abc
-      // service  getUniById(this.id);
-    });
-
-
+    // this.route.params.subscribe((params) => {
+    //   // home/abc
+    //   // home/xyz
+    //   // this.id = params.uniId  //abc
+    //   // service  getUniById(this.id);
+    // });
 
     // js promise
-    getAPI().then(data => {
+    // getAPI().then(data => {
 
-    })
+    // })
   }
-  onIdSearchHandler(uniId: string) {
-    this.uniId = uniId;
-  }
+
 }

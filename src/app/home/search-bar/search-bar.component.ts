@@ -1,4 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { UniListService } from 'src/app/services/uni-list.service';
 
 @Component({
   selector: 'app-search-bar',
@@ -6,15 +7,15 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./search-bar.component.css']
 })
 export class SearchBarComponent implements OnInit {
-  @Output() idSearchSend = new EventEmitter<string>();
 
   constructor(
+    private uniListService: UniListService
   ) { }
   idSearch: string = '';
   ngOnInit() {
   }
   onSearchId() {
-    this.idSearchSend.emit(this.idSearch.toUpperCase());
+    this.uniListService.searchIdUni(this.idSearch.toUpperCase());
   }
 
 }

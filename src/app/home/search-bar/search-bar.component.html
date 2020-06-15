@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-lg-12">
-      <form>
+      <!-- <form>
         <div class="form-group">
           <input
             type="email"
@@ -10,8 +10,30 @@
             [(ngModel)]="idSearch"
             name="first"
           />
-          <button class="btn btn-primary" (click)="onSearchId()">Tìm kiếm</button>
+          <button class="btn btn-primary" (click)="onSearchId()">
+            Tìm kiếm
+          </button>
         </div>
+      </form> -->
+
+      <form>
+        <mat-form-field class="example-full-width input-form">
+          <input
+            matInput
+            placeholder="Nhập ID trường (VD: FTU, BKU,...)"
+            [(ngModel)]="idSearch"
+            name="search"
+          />
+        </mat-form-field>
+        <button
+          type="submit"
+          mat-raised-button
+          class="search-button"
+          color="primary"
+          (click)="onSearchId()"
+        >
+          Tìm Kiếm
+        </button>
       </form>
     </div>
   </div>

@@ -1,0 +1,14 @@
+.navbar {
+  border-radius: 5px;
+  background-color: #673AB7;
+  color: white;
+}
+
+.navbar-brand {
+  font-weight: bold;
+  color: white;
+}
+.navbar .navbar-collapse .navbar-nav .nav-item .nav-link {
+  color: white;
+}
+
