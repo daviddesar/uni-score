@@ -14,7 +14,9 @@
         <td></td>
       </tr>
       <ng-template #available>
-        <tr *ngFor="let uni of renderTable" class="uni-component">
+        <!-- <tr app-uni *ngFor="let uni of renderTable" class="uni-component" [university]="uni" [attr.routerLink]="routerLink + 'a' ">
+        </tr> -->
+        <tr *ngFor="let uni of renderTable" class="uni-component" (click)="redirectToUni(uni.id)">
           <td>{{ uni.id }}</td>
           <td>{{ uni.name }}</td>
           <td>{{ uni.info }}</td>
@@ -23,3 +25,4 @@
     </tbody>
   </table>
 </div>
+<div app-uni></div>

@@ -1,12 +1,10 @@
 import {
   Component,
-  OnInit,
-  Input,
-  OnChanges,
-  SimpleChanges,
+  OnInit
 } from '@angular/core';
 import { UniListService } from 'src/app/services/uni-list.service';
 import { University } from '../../model/university.model';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-list-uni',
@@ -14,18 +12,18 @@ import { University } from '../../model/university.model';
   styleUrls: ['./list-uni.component.css'],
 })
 export class ListUniComponent implements OnInit {
-
   uniList: Array<University>;
   renderTable: any;
   indexSearch: any;
+  routerLink: string;
 
 
-  constructor(private uniListService: UniListService) {
+  constructor(private uniListService: UniListService, public router: Router) {
     this.uniList = uniListService.uniList;
     this.renderTable = [...this.uniList];
     this.indexSearch = uniListService.currentIndexSearch;
+    this.routerLink = 'home/ftu';
   }
-  columnsToDisplay = ['userName', 'age'];
 
 
   ngOnInit() {
@@ -34,13 +32,12 @@ export class ListUniComponent implements OnInit {
         this.indexSearch = newIndex;
         return;
       }
-      // console.log('Emitter run!');
       this.indexSearch = newIndex;
-      console.log(this.indexSearch);
       this.renderTable = [this.uniList[this.indexSearch]];
-      // console.log('Table: ', this.renderTable);
     });
   }
-
+  redirectToUni(id: string) {
+    this.router.navigate(['home', id.toLowerCase()]);
+  }
 
 }

@@ -11,7 +11,7 @@ export class SearchBarComponent implements OnInit {
   constructor(
     private uniListService: UniListService
   ) { }
-  idSearch: string = '';
+  idSearch = '';
   ngOnInit() {
   }
   onSearchId() {

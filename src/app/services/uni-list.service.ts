@@ -50,4 +50,8 @@ export class UniListService {
     // emit changes
     this.currentSearchEmitter.emit(this.currentIndexSearch);
   }
+  getUniById(uniId: string) {
+    const resultIndex = this.uniList.findIndex(uni => uniId.toUpperCase() === uni.id);
+    return this.uniList[resultIndex];
+  }
 }
